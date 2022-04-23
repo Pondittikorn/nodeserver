@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Profile"> 
+    <title>JuekjuekHUB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+
+        <!-- Navigation Bar -->
+        <header>
+            <nav>
+                <img class="logo" src=<%=logo %> alt="logo">
+                <div class="links">
+                    <a href="#">ABOUT</a>
+                    <a href="#">DOCS</a>
+                    <button class="button_1" href="#">LOGIN</button>
+                </div> 
+            </nav>
+        </header>
+
+        <!-- Contents-->
+        <section class="info">
+            <h1 class="content_font1"><%=contentfont1 %></h1>
+            <h4 class="content_font2"><%=contentfont2 %></h4>
+
+            <!-- Add LOOP -->
+            <% obj_icon.forEach(function(icon){ %>
+            <div class="icons">
+                <div class="icon">
+                    <img src=<%= icon.img %> alt="email">
+                    <p class="icon_info"><%= icon.bottom %></p>
+                </div>
+            <% }) %>
+                <!-- NOT USE
+                <div class="icon">
+                    <img src="images/facebook-svgrepo-com 1.svg" alt="facebook">
+                    <p class="icon_info">PUNGPOND</p>
+                </div>
+
+                <div class="icon">
+                    <img src="images/youtube-svgrepo-com 1.svg" alt="youtube">
+                    <p class="icon_info">PUNGPOND</p>
+                </div>
+                -->
+            </div>
+        </section>
+
+<!-- Feature Bar -->
+        <section class="features">
+            <!-- Add Parameter that forEach loop -->
+            <% obj_feature.forEach(function(feature){ %>
+            <div class="feature">
+                <img src=<%= feature.img %> alt="Programming">
+                <div class="feature_info">
+                    <p class="feature_top"><%= feature.top %></p>
+                    <p class="feature_bottom"><%= feature.bottom %></p>
+                </div>
+            </div>
+            <% }) %>
+            <!-- Comment not use
+            <div class="feature">
+                <img src="images/ai-robot-replace-human 1.svg" alt="AI">
+                <div class="feature_info">
+                    <p class="feature_top">AIoT & Robotics</p>
+                    <p class="feature_bottom">Enjoy Coding and Playing 
+                        Python,ROS,Mechanict</p>
+                </div>
+            </div>
+            -->
+            <div class="feature">
+                <div class="feature_info">
+                    <p class="feature_more">Learn More</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
